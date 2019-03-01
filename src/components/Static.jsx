@@ -9,29 +9,35 @@ class Static extends React.Component {
     this.state = {
       masterButtonList: [
         {
-          clicked: null,
+          clicked: false,
           pattern: 0,
           id: v4()
         },
         {
-          clicked: null,
+          clicked: false,
           pattern: 1,
           id: v4()
         },
         {
-          clicked: null,
+          clicked: false,
           pattern: 2,
           id: v4()
         },
         {
-          clicked: null,
+          clicked: false,
           pattern: 3,
           id: v4()
         },
         {
-          clicked: null,
+          clicked: false,
           pattern: 0,
           id: v4()
+        }
+      ],
+      
+      successArray: [
+        {
+          magic: 1,
         }
       ]
     };
@@ -41,12 +47,17 @@ class Static extends React.Component {
   
   onHandleClick(id){
     let workWithThis = this.state.masterButtonList.slice();
+    let array = this.state.successArray.slice();
     workWithThis.forEach(function(button){
       if (id === button.id && button.pattern === 0){
-        button.pattern +=1;
+        console.log('this is where failure will go');
+      } else if (id === button.id && button.pattern === 1 && array[0].magic === 1){
+        array[0].magic += 1;
       }
   });
+  console.log(array);
 this.setState({masterButtonList: workWithThis});
+this.setState({successArray: array});
 }
   
   render(){

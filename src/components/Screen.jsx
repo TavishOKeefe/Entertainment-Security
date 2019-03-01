@@ -11,7 +11,7 @@ function Screen(props){
 }
 
 Screen.propTypes = {
-  clicked: PropTypes.string,
+  clicked: PropTypes.bool,
   pattern: PropTypes.number
 };
 
