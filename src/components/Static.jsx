@@ -42,6 +42,14 @@ class Static extends React.Component {
       ]
     };
     this.onHandleClick = this.onHandleClick.bind(this);
+    this.onFailureReset = this.onFailureReset.bind(this);
+  }
+  
+  onFailureReset(){
+    let array = this.state.successArray.slice();
+    array[0].magic = 1;
+    console.log(array);
+    this.setState({successArray: array});
   }
   
   
@@ -50,7 +58,7 @@ class Static extends React.Component {
     let array = this.state.successArray.slice();
     workWithThis.forEach(function(button){
       if (id === button.id && button.pattern === 0){
-        console.log('this is where failure will go');
+        onFailureReset();
       } else if (id === button.id && button.pattern === 1 && array[0].magic === 1){
         array[0].magic += 1;
       } else if (id === button.id && button.pattern === 2 && array[0].magic === 2){
@@ -58,7 +66,7 @@ class Static extends React.Component {
       } else if (id === button.id && button.pattern === 3 && array[0].magic === 3){
         console.log('this is where success will go');
       } else {
-        console.log('this is where failure will go');
+        onFailureReset();
       }
   });
 this.setState({masterButtonList: workWithThis});
@@ -76,7 +84,6 @@ this.setState({successArray: array});
               key={butt.id}
             />
             <button onClick={() => this.onHandleClick(butt.id)}>Click</button>
-            <p>{butt.id}</p>
             <hr/>
           </div>
         )}
@@ -86,10 +93,6 @@ this.setState({successArray: array});
 }
   
 export default Static;
-
-// else if (id === button.id && button.pattern === 0) {
-//   return "you lose";
-// }
   
   
   
