@@ -33,10 +33,23 @@ class Static extends React.Component {
     this.onHandleClick = this.onHandleClick.bind(this);
   }
   
+  
   onHandleClick(id){
+    const clickedButtons = [];
+    console.log(clickedButtons.length);
     let workWithThis = this.state.masterButtonList.slice();
-    
-  }
+    workWithThis.forEach(function(button){
+      if (clickedButtons.length === 3){
+        return 'you win';
+      }
+      else if ((id === button.id) && (button.pattern === clickedButtons.length)){
+        clickedButtons.push(id);
+      } else {
+        return 'you lose';
+      }
+  });
+this.setState({masterButtonList: workWithThis});
+}
   
   render(){
     return(
@@ -59,6 +72,10 @@ class Static extends React.Component {
 }
   
 export default Static;
+
+// else if (id === button.id && button.pattern === 0) {
+//   return "you lose";
+// }
   
   
   
