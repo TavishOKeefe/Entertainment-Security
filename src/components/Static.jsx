@@ -15,16 +15,27 @@ class Static extends React.Component {
         },
         {
           clicked: null,
-          pattern: 0,
+          pattern: 1,
           id: v4()
         },
         {
           clicked: null,
-          pattern: 0,
+          pattern: 2,
+          id: v4()
+        },
+        {
+          clicked: null,
+          pattern: 3,
           id: v4()
         },
       ]
     };
+    this.onHandleClick = this.onHandleClick.bind(this);
+  }
+  
+  onHandleClick(id){
+    let workWithThis = this.state.masterButtonList.slice();
+    
   }
   
   render(){
@@ -38,6 +49,7 @@ class Static extends React.Component {
               key={butt.id}
             />
             <button onClick={() => this.onHandleClick(butt.id)}>Click</button>
+            <p>{butt.id}</p>
             <hr/>
           </div>
         )}
