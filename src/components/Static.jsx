@@ -28,6 +28,11 @@ class Static extends React.Component {
           pattern: 3,
           id: v4()
         },
+        {
+          clicked: null,
+          pattern: 0,
+          id: v4()
+        }
       ]
     };
     this.onHandleClick = this.onHandleClick.bind(this);
@@ -35,17 +40,10 @@ class Static extends React.Component {
   
   
   onHandleClick(id){
-    const clickedButtons = [];
-    console.log(clickedButtons.length);
     let workWithThis = this.state.masterButtonList.slice();
     workWithThis.forEach(function(button){
-      if (clickedButtons.length === 3){
-        return 'you win';
-      }
-      else if ((id === button.id) && (button.pattern === clickedButtons.length)){
-        clickedButtons.push(id);
-      } else {
-        return 'you lose';
+      if (id === button.id && button.pattern === 0){
+        button.pattern +=1;
       }
   });
 this.setState({masterButtonList: workWithThis});
