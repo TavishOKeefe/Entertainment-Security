@@ -2,15 +2,19 @@ import React from 'react';
 
 function Screen(props){
   
+  return(
+    <div>
+    <p>{props.clicked}</p>
+    <p>{props.pattern}</p>
+    <p>{props.key}</p>
+    </div>
+  );
 }
 
-
-
-
 Screen.propTypes = {
-  clicked: PropTypes.array,
-  pattern: PropTypes.func,
-  key: PropTypes.func,
+  clicked: PropTypes.string,
+  pattern: PropTypes.number,
+  key: PropTypes.string,
 };
 
 export default Screen;

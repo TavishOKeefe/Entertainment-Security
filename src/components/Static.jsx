@@ -1,4 +1,5 @@
 import React from 'react';
+import Screen from './Screen';
 import { v4 } from 'uuid';
 
 class Static extends React.Component {
