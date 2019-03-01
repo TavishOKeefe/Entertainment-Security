@@ -53,9 +53,14 @@ class Static extends React.Component {
         console.log('this is where failure will go');
       } else if (id === button.id && button.pattern === 1 && array[0].magic === 1){
         array[0].magic += 1;
+      } else if (id === button.id && button.pattern === 2 && array[0].magic === 2){
+        array[0].magic += 1;
+      } else if (id === button.id && button.pattern === 3 && array[0].magic === 3){
+        console.log('this is where success will go');
+      } else {
+        console.log('this is where failure will go');
       }
   });
-  console.log(array);
 this.setState({masterButtonList: workWithThis});
 this.setState({successArray: array});
 }
