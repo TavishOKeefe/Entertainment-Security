@@ -47,8 +47,8 @@ class Static extends React.Component {
   
   onFailureReset(){
     let array = this.state.successArray.slice();
+    console.log('also getting here');
     array[0].magic = 1;
-    console.log(array);
     this.setState({successArray: array});
   }
   
@@ -56,9 +56,10 @@ class Static extends React.Component {
   onHandleClick(id){
     let workWithThis = this.state.masterButtonList.slice();
     let array = this.state.successArray.slice();
-    workWithThis.forEach(function(button){
+    workWithThis.forEach((button) => {
       if (id === button.id && button.pattern === 0){
-        onFailureReset();
+        this.onFailureReset();
+        console.log('getting here');
       } else if (id === button.id && button.pattern === 1 && array[0].magic === 1){
         array[0].magic += 1;
       } else if (id === button.id && button.pattern === 2 && array[0].magic === 2){
@@ -66,7 +67,7 @@ class Static extends React.Component {
       } else if (id === button.id && button.pattern === 3 && array[0].magic === 3){
         console.log('this is where success will go');
       } else {
-        onFailureReset();
+        this.onFailureReset();
       }
   });
 this.setState({masterButtonList: workWithThis});
