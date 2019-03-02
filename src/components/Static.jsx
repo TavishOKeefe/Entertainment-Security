@@ -47,7 +47,6 @@ class Static extends React.Component {
   
   onFailureReset(){
     let array = this.state.successArray.slice();
-    console.log('also getting here');
     array[0].magic = 1;
     this.setState({successArray: array});
   }
@@ -59,14 +58,13 @@ class Static extends React.Component {
     workWithThis.forEach((button) => {
       if (id === button.id && button.pattern === 0){
         this.onFailureReset();
-        console.log('getting here');
       } else if (id === button.id && button.pattern === 1 && array[0].magic === 1){
         array[0].magic += 1;
       } else if (id === button.id && button.pattern === 2 && array[0].magic === 2){
         array[0].magic += 1;
       } else if (id === button.id && button.pattern === 3 && array[0].magic === 3){
         console.log('this is where success will go');
-      } else {
+      } else if (id === button.id){
         this.onFailureReset();
       }
   });
