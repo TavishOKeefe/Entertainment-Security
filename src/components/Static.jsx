@@ -16,17 +16,17 @@ class Static extends React.Component {
         },
         {
           clicked: false,
-          pattern: 1,
+          pattern: 0,
           id: v4()
         },
         {
           clicked: false,
-          pattern: 2,
+          pattern: 0,
           id: v4()
         },
         {
           clicked: false,
-          pattern: 3,
+          pattern: 0,
           id: v4()
         },
         {
@@ -40,7 +40,13 @@ class Static extends React.Component {
         {
           magic: 1,
         }
-      ]
+      ],
+
+      formArray: [
+        {
+          numberOfClicks: 0,
+        }
+      ],
     };
     this.onHandleClick = this.onHandleClick.bind(this);
     this.onFailureReset = this.onFailureReset.bind(this);
@@ -73,6 +79,21 @@ this.setState({masterButtonList: workWithThis});
 this.setState({successArray: array});
 }
 
+onHandleFormClick(id){
+  let workWithThis = this.state.masterButtonList.slice();
+  let array = this.state.formArray.slice();
+  workWithThis.forEach((button) => {
+    if (id === button.id){
+      array[0].numberOfClicks += 1;
+      button.pattern += array[0].numberOfClicks;
+    } else if (array[0].numberOfClicks === 3){
+      console.log('Your buttons have been set!')
+    }
+});
+this.setState({masterButtonList: workWithThis});
+this.setState({formArray: array});
+}
+
   render(){
     return(
       <div>
@@ -96,7 +117,7 @@ this.setState({successArray: array});
               pattern={butt.pattern}
               key={butt.id}
             />
-            <button onClick={() => this.onHandleClick(butt.id)}>Click</button>
+            <button onClick={() => this.onHandleFormClick(butt.id)}>Click</button>
             <hr/>
           </div>
         )}
