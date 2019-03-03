@@ -1,9 +1,10 @@
 import React from 'react';
 import Screen from './Screen';
+import Form from './Form';
 import { v4 } from 'uuid';
 
 class Static extends React.Component {
-  
+
   constructor(props){
     super(props);
     this.state = {
@@ -34,7 +35,7 @@ class Static extends React.Component {
           id: v4()
         }
       ],
-      
+
       successArray: [
         {
           magic: 1,
@@ -44,14 +45,14 @@ class Static extends React.Component {
     this.onHandleClick = this.onHandleClick.bind(this);
     this.onFailureReset = this.onFailureReset.bind(this);
   }
-  
+
   onFailureReset(){
     let array = this.state.successArray.slice();
     array[0].magic = 1;
     this.setState({successArray: array});
   }
-  
-  
+
+
   onHandleClick(id){
     let workWithThis = this.state.masterButtonList.slice();
     let array = this.state.successArray.slice();
@@ -71,13 +72,26 @@ class Static extends React.Component {
 this.setState({masterButtonList: workWithThis});
 this.setState({successArray: array});
 }
-  
+
   render(){
     return(
       <div>
+      <h1>Screen</h1>
         {this.state.masterButtonList.map((butt) =>
           <div key={butt.id}>
             <Screen
+              clicked={butt.clicked}
+              pattern={butt.pattern}
+              key={butt.id}
+            />
+            <button onClick={() => this.onHandleClick(butt.id)}>Click</button>
+            <hr/>
+          </div>
+        )}
+        <h1>Form</h1>
+        {this.state.masterButtonList.map((butt) =>
+          <div key={butt.id}>
+            <Form
               clicked={butt.clicked}
               pattern={butt.pattern}
               key={butt.id}
@@ -90,9 +104,5 @@ this.setState({successArray: array});
     );
   }
 }
-  
+
 export default Static;
-  
-  
-  
-  
