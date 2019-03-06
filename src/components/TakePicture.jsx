@@ -1,12 +1,17 @@
 import React from 'react';
 import Webcam from 'react-webcam';
+import ShowImage from './ShowImage';
 
 class TakePicture extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {
-      masterImageList: [{}]
+      masterImageList: [
+        {
+
+        }
+      ]
     };
     this.capture = this.capture.bind(this);
   }
@@ -40,6 +45,16 @@ class TakePicture extends React.Component {
           videoConstraints={videoConstraints}
         />
         <button onClick={() => this.capture(_image)}>Capture photo</button>
+        <h1>Form</h1>
+        {this.state.masterImageList.map((image, i) =>
+          <div key={i}>
+            <ShowImage
+              imageURL = {image}
+              key={i}
+            />
+            <hr/>
+          </div>
+        )}
       </div>
     );
   }
