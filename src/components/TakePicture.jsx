@@ -7,11 +7,7 @@ class TakePicture extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      masterImageList: [
-        {
-
-        }
-      ]
+      masterImageList: [{}]
     };
     this.capture = this.capture.bind(this);
   }
