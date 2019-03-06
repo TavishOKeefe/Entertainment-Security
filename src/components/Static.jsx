@@ -2,6 +2,7 @@ import React from 'react';
 import Screen from './Screen';
 import Form from './Form';
 import { v4 } from 'uuid';
+import TakePicture from './TakePicture';
 
 class Static extends React.Component {
 
@@ -74,30 +75,30 @@ class Static extends React.Component {
       } else if (id === button.id){
         this.onFailureReset();
       }
-  });
-this.setState({masterButtonList: workWithThis});
-this.setState({successArray: array});
-}
+    });
+    this.setState({masterButtonList: workWithThis});
+    this.setState({successArray: array});
+  }
 
-onHandleFormClick(id){
-  let workWithThis = this.state.masterButtonList.slice();
-  let array = this.state.formArray.slice();
-  workWithThis.forEach((button) => {
-    if (id === button.id){
-      array[0].numberOfClicks += 1;
-      button.pattern += array[0].numberOfClicks;
-    } else if (array[0].numberOfClicks === 3){
-      console.log('Your buttons have been set!')
-    }
-});
-this.setState({masterButtonList: workWithThis});
-this.setState({formArray: array});
-}
+  onHandleFormClick(id){
+    let workWithThis = this.state.masterButtonList.slice();
+    let array = this.state.formArray.slice();
+    workWithThis.forEach((button) => {
+      if (id === button.id){
+        array[0].numberOfClicks += 1;
+        button.pattern += array[0].numberOfClicks;
+      } else if (array[0].numberOfClicks === 3){
+        console.log('Your buttons have been set!');
+      }
+    });
+    this.setState({masterButtonList: workWithThis});
+    this.setState({formArray: array});
+  }
 
   render(){
     return(
       <div>
-      <h1>Screen</h1>
+        <h1>Screen</h1>
         {this.state.masterButtonList.map((butt) =>
           <div key={butt.id}>
             <Screen
@@ -121,6 +122,8 @@ this.setState({formArray: array});
             <hr/>
           </div>
         )}
+        <h1>Image</h1>
+        <TakePicture/>
       </div>
     );
   }
