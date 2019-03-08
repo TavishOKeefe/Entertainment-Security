@@ -1,9 +1,6 @@
 import React from 'react';
 import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
-import { addImage } from '../actions/index';
-import { connect } from 'react-redux';
-import { dispatch } from 'redux';
 
 class TakePicture extends React.Component {
 
@@ -15,14 +12,13 @@ class TakePicture extends React.Component {
     this.capture = this.capture.bind(this);
   }
 
-  capture(image){
+  capture(props){
     let newImageList = this.state.masterImageList.slice();
-    const imageSrc = image.getScreenshot();
+    const imageSrc = props.getScreenshot();
     console.log(imageSrc);
     newImageList.push(imageSrc);
     this.setState({masterImageList: newImageList});
     console.log(newImageList);
-    dispatch(addImage(imageSrc));
   }
 
   render() {
@@ -60,4 +56,4 @@ class TakePicture extends React.Component {
   }
 }
 
-export default connect()(TakePicture);
+export default TakePicture;
