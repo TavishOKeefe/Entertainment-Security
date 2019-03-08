@@ -22,8 +22,7 @@ class TakePicture extends React.Component {
     newImageList.push(imageSrc);
     this.setState({masterImageList: newImageList});
     console.log(newImageList);
-    let firebaseImage = JSON.parse(imageSrc);
-    dispatch(addImage(firebaseImage));
+    dispatch(addImage(imageSrc));
   }
 
   render() {

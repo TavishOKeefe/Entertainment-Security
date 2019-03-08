@@ -10,11 +10,11 @@ const store = createStore(applyMiddleware(thunkMiddleware));
 
 const render = (Component) => {
   ReactDOM.render(
-      <HashRouter>
-        <Provider store={store}>
-          <Component/>
-        </Provider>
-      </HashRouter>,
+    <HashRouter>
+      <Provider store={store}>
+        <Component/>
+      </Provider>
+    </HashRouter>,
     document.getElementById('react-app-root')
   );
 };
