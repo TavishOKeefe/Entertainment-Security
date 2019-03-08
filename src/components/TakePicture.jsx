@@ -3,26 +3,27 @@ import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
 import { addImage } from '../actions/index';
 import { connect } from 'react-redux';
+import { dispatch } from 'redux';
 
 class TakePicture extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {
-      masterImageList: [{}]
+      masterImageList: []
     };
     this.capture = this.capture.bind(this);
   }
 
-  capture(props){
-    const { dispatch } = props;
+  capture(image){
     let newImageList = this.state.masterImageList.slice();
-    const imageSrc = props.getScreenshot();
-    dispatch(addImage(imageSrc));
+    const imageSrc = image.getScreenshot();
     console.log(imageSrc);
     newImageList.push(imageSrc);
     this.setState({masterImageList: newImageList});
     console.log(newImageList);
+    let firebaseImage = JSON.parse(imageSrc);
+    dispatch(addImage(firebaseImage));
   }
 
   render() {
