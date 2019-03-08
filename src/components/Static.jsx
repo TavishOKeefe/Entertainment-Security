@@ -98,7 +98,7 @@ class Static extends React.Component {
   render(){
     return(
       <div>
-        <h1>Screen</h1>
+        <h1>Screen Saver</h1>
         {this.state.masterButtonList.map((butt) =>
           <div key={butt.id}>
             <Screen
@@ -110,7 +110,7 @@ class Static extends React.Component {
             <hr/>
           </div>
         )}
-        <h1>Form</h1>
+        <h1>Set Your Button Clicks</h1>
         {this.state.masterButtonList.map((butt) =>
           <div key={butt.id}>
             <Form
