@@ -1,6 +1,7 @@
 import React from 'react';
 import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
+import { addImage } from '../actions/index';
 
 class TakePicture extends React.Component {
 
