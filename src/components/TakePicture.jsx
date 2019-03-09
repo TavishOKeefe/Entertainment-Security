@@ -41,7 +41,7 @@ class TakePicture extends React.Component {
           videoConstraints={videoConstraints}
         />
         <button onClick={() => this.capture(_image)}>Capture photo</button>
-        <h1>Form</h1>
+        <h1>Images</h1>
         {this.state.masterImageList.map((image, i) =>
           <div key={i}>
             <ShowImage
