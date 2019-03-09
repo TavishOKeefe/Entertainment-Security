@@ -57,7 +57,7 @@ class Static extends React.Component {
 
   onFailureReset(){
     let array = this.state.successArray.slice();
-    array[0].trackPattern = 1;
+    array[0].trackPattern = 0;
     this.setState({successArray: array});
   }
 
