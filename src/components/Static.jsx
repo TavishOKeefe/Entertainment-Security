@@ -93,7 +93,8 @@ class Static extends React.Component {
     let workWithThis = this.state.masterButtonList.slice();
     let array = this.state.formArray.slice();
     workWithThis.forEach((button) => {
-      if (id === button.id){
+      if (id === button.id && button.clicked === false){
+        button.clicked = true;
         array[0].numberOfClicks += 1;
         button.pattern += array[0].numberOfClicks;
       } else if (array[0].numberOfClicks === 3){
@@ -170,10 +171,8 @@ class Static extends React.Component {
                   audio={false}
                   imageSmoothing={true}
                   screenshotQuality={.95}
-                  height={350}
                   ref={(input) => {_image = input;}}
                   screenshotFormat='image/jpeg'
-                  width={350}
                   videoConstraints={videoConstraints}
                 />
                 <button onClick={() => this.onHandleClick(butt.id, _image)}>Click</button>
