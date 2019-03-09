@@ -48,6 +48,8 @@ class Static extends React.Component {
           numberOfClicks: 0,
         }
       ],
+
+      formVisibleOnPage: false
     };
     this.onHandleClick = this.onHandleClick.bind(this);
     this.onFailureReset = this.onFailureReset.bind(this);
@@ -88,7 +90,7 @@ class Static extends React.Component {
         array[0].numberOfClicks += 1;
         button.pattern += array[0].numberOfClicks;
       } else if (array[0].numberOfClicks === 3){
-        console.log('Your buttons have been set!');
+        this.setState({formVisibleOnPage: true});
       }
     });
     this.setState({masterButtonList: workWithThis});
@@ -96,36 +98,42 @@ class Static extends React.Component {
   }
 
   render(){
-    return(
-      <div>
-        <h1>Screen Saver</h1>
-        {this.state.masterButtonList.map((butt) =>
-          <div key={butt.id}>
-            <Screen
-              clicked={butt.clicked}
-              pattern={butt.pattern}
-              key={butt.id}
-            />
-            <button onClick={() => this.onHandleClick(butt.id)}>Click</button>
-            <hr/>
+
+      if (this.state.formVisibleOnPage === true){
+        return (
+          <div>
+            <h1>Screen Saver</h1>
+            {this.state.masterButtonList.map((butt) =>
+              <div key={butt.id}>
+                <Screen
+                  clicked={butt.clicked}
+                  pattern={butt.pattern}
+                  key={butt.id}
+                />
+                <button onClick={() => this.onHandleClick(butt.id)}>Click</button>
+                <hr/>
+              </div>
+            )}
           </div>
-        )}
-        <h1>Set Your Button Clicks</h1>
-        {this.state.masterButtonList.map((butt) =>
-          <div key={butt.id}>
-            <Form
-              clicked={butt.clicked}
-              pattern={butt.pattern}
-              key={butt.id}
-            />
-            <button onClick={() => this.onHandleFormClick(butt.id)}>Click</button>
-            <hr/>
+      )} else {
+        return(
+          <div>
+            <h1>Set Your Button Clicks</h1>
+            {this.state.masterButtonList.map((butt) =>
+              <div key={butt.id}>
+                <Form
+                  clicked={butt.clicked}
+                  pattern={butt.pattern}
+                  key={butt.id}
+                />
+                <button onClick={() => this.onHandleFormClick(butt.id)}>Click</button>
+                <hr/>
+              </div>
+            )}
           </div>
-        )}
-        <h1>Image</h1>
-        <TakePicture/>
-      </div>
-    );
+      )}
+        // <h1>Image</h1>
+        // <TakePicture/>
   }
 }
 
