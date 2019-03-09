@@ -10,7 +10,7 @@ _A user will be able to view a "screensaver" type page, with an image (which in 
 
 If the user clicks on the wrong places, or if the user clicks on the right places in the wrong order, a picture will be taken of the user. This image will be saved to an external database, which only the person who set up the application has access to, as well as locally on their device, for fun image manipulation with the application of the users choosing._
 
-## Specifications...
+## Specifications
 
 ![alt text](./src/assets/images/Tavish-Portfolio.png "Portfolio-Wireframe")
 
