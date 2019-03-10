@@ -2,7 +2,6 @@ import React from 'react';
 import Screen from './Screen';
 import Form from './Form';
 import { v4 } from 'uuid';
-import TakePicture from './TakePicture';
 import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
 
@@ -124,66 +123,64 @@ class Static extends React.Component {
       facingMode: 'user'
     };
 
-      if (this.state.imagesVisibleOnPage === true){
-        return (
-          <div>
-            <h1>Images</h1>
-            {this.state.masterImageList.map((image, i) =>
-              <div key={i}>
-                <ShowImage
-                  imageURL = {image}
-                  key={i}
-                />
-                <hr/>
-              </div>
-            )}
-          </div>
-        )
-      } else if (this.state.formVisibleOnPage === false){
-        return (
-          <div>
-            <h1>Set Your Button Clicks</h1>
-            {this.state.masterButtonList.map((butt) =>
-              <div key={butt.id}>
-                <Form
-                  clicked={butt.clicked}
-                  pattern={butt.pattern}
-                  key={butt.id}
-                />
-                <button onClick={() => this.onHandleFormClick(butt.id)}>Click</button>
-                <hr/>
-              </div>
-            )}
-          </div>
-        )
-      } else {
-        return(
-          <div>
-            <h1>Screen Saver</h1>
-            {this.state.masterButtonList.map((butt) =>
-              <div key={butt.id}>
-                <Screen
-                  clicked={butt.clicked}
-                  pattern={butt.pattern}
-                  key={butt.id}
-                />
-                <Webcam
-                  audio={false}
-                  imageSmoothing={true}
-                  screenshotQuality={.95}
-                  ref={(input) => {_image = input;}}
-                  screenshotFormat='image/jpeg'
-                  videoConstraints={videoConstraints}
-                />
-                <button onClick={() => this.onHandleClick(butt.id, _image)}>Click</button>
-                <hr/>
-              </div>
-            )}
-          </div>
-        )
-      }
-        // <h1>Image</h1>
-        // <TakePicture/>
+    if (this.state.imagesVisibleOnPage === true){
+      return (
+        <div>
+          <h1>Images</h1>
+          {this.state.masterImageList.map((image, i) =>
+            <div key={i}>
+              <ShowImage
+                imageURL = {image}
+                key={i}
+              />
+              <hr/>
+            </div>
+          )}
+        </div>
+      );
+    } else if (this.state.formVisibleOnPage === false){
+      return (
+        <div>
+          <h1>Set Your Button Clicks</h1>
+          {this.state.masterButtonList.map((butt) =>
+            <div key={butt.id}>
+              <Form
+                clicked={butt.clicked}
+                pattern={butt.pattern}
+                key={butt.id}
+              />
+              <button onClick={() => this.onHandleFormClick(butt.id)}>Click</button>
+              <hr/>
+            </div>
+          )}
+        </div>
+      );
+    } else {
+      return(
+        <div>
+          <h1>Screen Saver</h1>
+          {this.state.masterButtonList.map((butt) =>
+            <div key={butt.id}>
+              <Screen
+                clicked={butt.clicked}
+                pattern={butt.pattern}
+                key={butt.id}
+              />
+              <Webcam
+                audio={false}
+                imageSmoothing={true}
+                screenshotQuality={.95}
+                ref={(input) => {_image = input;}}
+                screenshotFormat='image/jpeg'
+                videoConstraints={videoConstraints}
+              />
+              <button onClick={() => this.onHandleClick(butt.id, _image)}>Click</button>
+              <hr/>
+            </div>
+          )}
+        </div>
+      );
+    }
   }
 }
 
