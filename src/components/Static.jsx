@@ -5,6 +5,7 @@ import { v4 } from 'uuid';
 import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
 import Header from './Header';
+import marilyn from '../assets/images/marilyn.png';
 
 class Static extends React.Component {
 
@@ -12,6 +13,36 @@ class Static extends React.Component {
     super(props);
     this.state = {
       masterButtonList: [
+        {
+          clicked: false,
+          pattern: 0,
+          id: v4()
+        },
+        {
+          clicked: false,
+          pattern: 0,
+          id: v4()
+        },
+        {
+          clicked: false,
+          pattern: 0,
+          id: v4()
+        },
+        {
+          clicked: false,
+          pattern: 0,
+          id: v4()
+        },
+        {
+          clicked: false,
+          pattern: 0,
+          id: v4()
+        },
+        {
+          clicked: false,
+          pattern: 0,
+          id: v4()
+        },
         {
           clicked: false,
           pattern: 0,
@@ -130,14 +161,22 @@ class Static extends React.Component {
     };
 
     const hideVideo = {
-      visibility: 'hidden',
+      opacity: 0
     };
 
-    const showVideo = {
+    const showGrid = {
       display: 'grid',
-      gridTemplateColumns: '250px 250px 250px',
-      gridTemplateRows: '300px 300px 300px',
-      gridAutoFlow: 'row'
+      gridTemplateColumns: '250px 250px 250px 250px',
+      gridTemplateRows: '300px 300px 300px 300px',
+      gridAutoFlow: 'row',
+      justifyContent: 'center'
+    };
+
+    const showMarilyn = {
+      backgroundImage: 'url(' + marilyn + ')',
+      overflow: 'hidden',
+      justifyContent: 'center',
+      backgroundRepeat: 'no-repeat'
     };
 
     if (this.state.imagesVisibleOnPage === true){
@@ -145,60 +184,65 @@ class Static extends React.Component {
         <div>
           <h1>Images</h1>
           <Header/>
-          {this.state.masterImageList.map((image, i) =>
-            <div key={i}>
-              <ShowImage
-                imageURL = {image}
-                key={i}
-              />
-              <hr/>
-            </div>
-          )}
+          <div style={showGrid}>
+            {this.state.masterImageList.map((image, i) =>
+              <div key={i}>
+                <ShowImage
+                  imageURL = {image}
+                  key={i}
+                />
+                <hr/>
+              </div>
+            )}
+          </div>
         </div>
       );
     } else if (this.state.formVisibleOnPage === false){
       return (
         <div>
           <h1>Set Your Button Clicks</h1>
-          {this.state.masterButtonList.map((butt) =>
-            <div key={butt.id}>
-              <Form
-                clicked={butt.clicked}
-                pattern={butt.pattern}
-                key={butt.id}
-              />
-              <button onClick={() => this.onHandleFormClick(butt.id)}>Click</button>
-              <hr/>
-            </div>
-          )}
+          <div style={showGrid}>
+            {this.state.masterButtonList.map((butt) =>
+              <div key={butt.id}>
+                <Form
+                  clicked={butt.clicked}
+                  pattern={butt.pattern}
+                  key={butt.id}
+                />
+                <img src={marilyn} onClick={() => this.onHandleFormClick(butt.id)}/>
+                <hr/>
+              </div>
+            )}
+          </div>
         </div>
       );
     } else {
       return(
-        <div style={showVideo}>
-          {this.state.masterButtonList.map((butt) =>
-            <div key={butt.id}>
-              <Screen
-                clicked={butt.clicked}
-                pattern={butt.pattern}
-                key={butt.id}
-              />
-              <div style={hideVideo}>
-                <Webcam
-                  height={200}
-                  width={200}
-                  audio={false}
-                  imageSmoothing={true}
-                  screenshotQuality={.95}
-                  ref={(input) => {_image = input;}}
-                  screenshotFormat='image/jpeg'
-                  videoConstraints={videoConstraints}
+        <div style={showGrid}>
+            {this.state.masterButtonList.map((butt) =>
+              <div key={butt.id}>
+                <Screen
+                  clicked={butt.clicked}
+                  pattern={butt.pattern}
+                  key={butt.id}
                 />
+                <div style={showMarilyn} onClick={() => this.onHandleClick(butt.id, _image)}>
+                  <div style={hideVideo}>
+                    <Webcam
+                      height={200}
+                      width={200}
+                      audio={false}
+                      imageSmoothing={true}
+                      screenshotQuality={.95}
+                      ref={(input) => {_image = input;}}
+                      screenshotFormat='image/jpeg'
+                      videoConstraints={videoConstraints}
+                    />
+                  </div>
+                </div>
+                <hr/>
               </div>
-              <button onClick={() => this.onHandleClick(butt.id, _image)}>Click</button>
-              <hr/>
-            </div>
-          )}
+            )}
         </div>
       );
     }
