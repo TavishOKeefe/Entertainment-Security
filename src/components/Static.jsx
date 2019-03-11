@@ -104,9 +104,9 @@ class Static extends React.Component {
 
 
   onHandleClick(id, image){
-    let workWithThis = this.state.masterButtonList.slice();
+    let newMasterButtonList = this.state.masterButtonList.slice();
     let array = this.state.successArray.slice();
-    workWithThis.forEach((button) => {
+    newMasterButtonList.forEach((button) => {
       if (id === button.id && button.pattern === 0){
         this.onFailureReset();
         this.capture(image);
@@ -121,23 +121,24 @@ class Static extends React.Component {
         this.capture(image);
       }
     });
-    this.setState({masterButtonList: workWithThis});
+    this.setState({masterButtonList: newMasterButtonList});
     this.setState({successArray: array});
   }
 
   onHandleFormClick(id){
-    let workWithThis = this.state.masterButtonList.slice();
+    let newMasterButtonList = this.state.masterButtonList.slice();
     let array = this.state.formArray.slice();
-    workWithThis.forEach((button) => {
+    newMasterButtonList.forEach((button) => {
       if (id === button.id && button.clicked === false){
         button.clicked = true;
         array[0].numberOfClicks += 1;
         button.pattern += array[0].numberOfClicks;
-      } else if (array[0].numberOfClicks === 3){
+      }
+      if (array[0].numberOfClicks === 3){
         this.setState({formVisibleOnPage: true});
       }
     });
-    this.setState({masterButtonList: workWithThis});
+    this.setState({masterButtonList: newMasterButtonList});
     this.setState({formArray: array});
   }
 
