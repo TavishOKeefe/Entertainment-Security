@@ -124,6 +124,7 @@ class Static extends React.Component {
     };
 
     const hideVideo = {
+      visibility: 'hidden',
       backgroundColor: '#ecf0f1',
       fontFamily: 'sans-serif',
       paddingTop: '50px',
