@@ -4,7 +4,6 @@ import Form from './Form';
 import { v4 } from 'uuid';
 import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
-import Header from './Header';
 import marilyn from '../assets/images/marilyn.png';
 
 class Static extends React.Component {
@@ -170,7 +169,8 @@ class Static extends React.Component {
       gridTemplateColumns: '250px 250px 250px 250px',
       gridTemplateRows: '300px 300px 300px 300px',
       gridAutoFlow: 'row',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      paddingTop: '25px'
     };
 
     const showMarilyn = {
@@ -183,8 +183,7 @@ class Static extends React.Component {
     if (this.state.imagesVisibleOnPage === true){
       return (
         <div>
-          <h1>Images</h1>
-          <Header/>
+          <h1>Images:</h1>
           <div style={showGrid}>
             {this.state.masterImageList.map((image, i) =>
               <div key={i}>
@@ -201,7 +200,7 @@ class Static extends React.Component {
     } else if (this.state.formVisibleOnPage === false){
       return (
         <div>
-          <h1>Set Your Button Clicks</h1>
+          <h1>Set Your Button Clicks:</h1>
           <div style={showGrid}>
             {this.state.masterButtonList.map((butt) =>
               <div key={butt.id}>

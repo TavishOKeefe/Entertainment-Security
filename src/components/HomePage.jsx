@@ -7,7 +7,8 @@ function HomeScreen(){
     backgroundColor: '#ecf0f1',
     fontFamily: 'sans-serif',
     paddingTop: '50px',
-    textAlign: 'center'
+    textAlign: 'center',
+    justifyContent: 'center',
   };
 
   let _email = null;
