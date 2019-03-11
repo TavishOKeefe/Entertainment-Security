@@ -4,6 +4,7 @@ import Form from './Form';
 import { v4 } from 'uuid';
 import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
+import Header from './Header';
 
 class Static extends React.Component {
 
@@ -11,6 +12,11 @@ class Static extends React.Component {
     super(props);
     this.state = {
       masterButtonList: [
+        {
+          clicked: false,
+          pattern: 0,
+          id: v4()
+        },
         {
           clicked: false,
           pattern: 0,
@@ -125,20 +131,20 @@ class Static extends React.Component {
 
     const hideVideo = {
       visibility: 'hidden',
-      backgroundColor: '#ecf0f1',
-      fontFamily: 'sans-serif',
-      paddingTop: '50px',
-      textAlign: 'center'
     };
 
     const showVideo = {
-      display: 'block'
+      display: 'grid',
+      gridTemplateColumns: '250px 250px 250px',
+      gridTemplateRows: '300px 300px 300px',
+      gridAutoFlow: 'row'
     };
 
     if (this.state.imagesVisibleOnPage === true){
       return (
         <div>
           <h1>Images</h1>
+          <Header/>
           {this.state.masterImageList.map((image, i) =>
             <div key={i}>
               <ShowImage
@@ -170,7 +176,6 @@ class Static extends React.Component {
     } else {
       return(
         <div style={showVideo}>
-          <h1>Screen Saver</h1>
           {this.state.masterButtonList.map((butt) =>
             <div key={butt.id}>
               <Screen
@@ -180,6 +185,8 @@ class Static extends React.Component {
               />
               <div style={hideVideo}>
                 <Webcam
+                  height={200}
+                  width={200}
                   audio={false}
                   imageSmoothing={true}
                   screenshotQuality={.95}
