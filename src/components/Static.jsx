@@ -123,6 +123,17 @@ class Static extends React.Component {
       facingMode: 'user'
     };
 
+    const hideVideo = {
+      backgroundColor: '#ecf0f1',
+      fontFamily: 'sans-serif',
+      paddingTop: '50px',
+      textAlign: 'center'
+    };
+
+    const showVideo = {
+      display: 'block'
+    };
+
     if (this.state.imagesVisibleOnPage === true){
       return (
         <div>
@@ -157,7 +168,7 @@ class Static extends React.Component {
       );
     } else {
       return(
-        <div>
+        <div style={showVideo}>
           <h1>Screen Saver</h1>
           {this.state.masterButtonList.map((butt) =>
             <div key={butt.id}>
@@ -166,14 +177,16 @@ class Static extends React.Component {
                 pattern={butt.pattern}
                 key={butt.id}
               />
-              <Webcam
-                audio={false}
-                imageSmoothing={true}
-                screenshotQuality={.95}
-                ref={(input) => {_image = input;}}
-                screenshotFormat='image/jpeg'
-                videoConstraints={videoConstraints}
-              />
+              <div style={hideVideo}>
+                <Webcam
+                  audio={false}
+                  imageSmoothing={true}
+                  screenshotQuality={.95}
+                  ref={(input) => {_image = input;}}
+                  screenshotFormat='image/jpeg'
+                  videoConstraints={videoConstraints}
+                />
+              </div>
               <button onClick={() => this.onHandleClick(butt.id, _image)}>Click</button>
               <hr/>
             </div>
