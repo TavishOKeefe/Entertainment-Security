@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Header from './Header';
+import { addEmail } from './../actions/index';
 
 function HomeScreen(){
 
@@ -15,6 +15,10 @@ function HomeScreen(){
 
   let _email = null;
 
+  function onHandleEmailUploadClick(){
+    addEmail(_email.value);
+  }
+
   return(
     <div style={myStyledComponentStyles}>
       <Header/>
@@ -25,7 +29,7 @@ function HomeScreen(){
       />
       <br/>
       <br/>
-      <Link to="/static"><button>Next</button></Link>
+      <button onClick={onHandleEmailUploadClick}>Next</button>
     </div>
   );
 }

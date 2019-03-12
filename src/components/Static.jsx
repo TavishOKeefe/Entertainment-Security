@@ -145,10 +145,8 @@ class Static extends React.Component {
   capture(props){
     let newImageList = this.state.masterImageList.slice();
     const imageSrc = props.getScreenshot();
-    console.log(imageSrc);
     newImageList.push(imageSrc);
     this.setState({masterImageList: newImageList});
-    console.log(newImageList);
   }
 
   render(){
