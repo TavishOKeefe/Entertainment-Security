@@ -3,7 +3,7 @@ import Static from './Static';
 import HomePage from './HomePage';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
-import art from '../assets/images/Art-2.jpg';
+import art from '../assets/images/Art-5.jpg';
 
 function App(){
 
@@ -14,11 +14,16 @@ function App(){
     backgroundPosition: '50% 0%',
     width:'100%',
     height: '100%',
-    backgroundSize: 'contain'
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat'
   };
 
+  const relieveHeadache = {
+    backgroundColor: '#ecf0f1',
+  }
+
   return(
-    <div style={backgroundImage}>
+    <div style={relieveHeadache}>
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/static' component={Static} />
