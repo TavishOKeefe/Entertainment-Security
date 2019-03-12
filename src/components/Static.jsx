@@ -5,6 +5,7 @@ import { v4 } from 'uuid';
 import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
 import marilyn from '../assets/images/marilyn.png';
+import key from '../assets/images/Key-2.png';
 
 class Static extends React.Component {
 
@@ -183,6 +184,7 @@ class Static extends React.Component {
     if (this.state.imagesVisibleOnPage === true){
       return (
         <div>
+          <img src={key}/>
           <h1>Images:</h1>
           <div style={showGrid}>
             {this.state.masterImageList.map((image, i) =>
@@ -200,6 +202,7 @@ class Static extends React.Component {
     } else if (this.state.formVisibleOnPage === false){
       return (
         <div>
+          <img src={key}/>
           <h1>Set Your Button Clicks:</h1>
           <div style={showGrid}>
             {this.state.masterButtonList.map((butt) =>
@@ -219,6 +222,7 @@ class Static extends React.Component {
     } else {
       return(
         <div style={showGrid}>
+          <img src={key}/>
             {this.state.masterButtonList.map((butt) =>
               <div key={butt.id}>
                 <Screen
