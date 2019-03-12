@@ -5,7 +5,6 @@ import { v4 } from 'uuid';
 import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
 import marilyn from '../assets/images/marilyn.png';
-import key from '../assets/images/Key-2.png';
 import Header from './Header';
 
 class Static extends React.Component {
@@ -225,30 +224,30 @@ class Static extends React.Component {
         <div>
           <Header/>
           <div style={showGrid}>
-              {this.state.masterButtonList.map((butt) =>
-                <div key={butt.id}>
-                  <Screen
-                    clicked={butt.clicked}
-                    pattern={butt.pattern}
-                    key={butt.id}
-                  />
-                  <div style={showMarilyn} onClick={() => this.onHandleClick(butt.id, _image)}>
-                    <div style={hideVideo}>
-                      <Webcam
-                        height={200}
-                        width={200}
-                        audio={false}
-                        imageSmoothing={true}
-                        screenshotQuality={.95}
-                        ref={(input) => {_image = input;}}
-                        screenshotFormat='image/jpeg'
-                        videoConstraints={videoConstraints}
-                      />
-                    </div>
+            {this.state.masterButtonList.map((butt) =>
+              <div key={butt.id}>
+                <Screen
+                  clicked={butt.clicked}
+                  pattern={butt.pattern}
+                  key={butt.id}
+                />
+                <div style={showMarilyn} onClick={() => this.onHandleClick(butt.id, _image)}>
+                  <div style={hideVideo}>
+                    <Webcam
+                      height={200}
+                      width={200}
+                      audio={false}
+                      imageSmoothing={true}
+                      screenshotQuality={.95}
+                      ref={(input) => {_image = input;}}
+                      screenshotFormat='image/jpeg'
+                      videoConstraints={videoConstraints}
+                    />
                   </div>
-                  <hr/>
                 </div>
-              )}
+                <hr/>
+              </div>
+            )}
           </div>
         </div>
       );

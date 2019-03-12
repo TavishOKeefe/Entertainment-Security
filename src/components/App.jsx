@@ -1,27 +1,26 @@
 import React from 'react';
 import Static from './Static';
 import HomePage from './HomePage';
-import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
-import art from '../assets/images/Art-5.jpg';
+// import art from '../assets/images/Art-5.jpg';
 import Footer from './Footer';
 
 function App(){
 
-  const backgroundImage = {
-    backgroundImage: 'url(' + art + ')',
-    backgrounSize: 'cover',
-    overflow: 'hidden',
-    backgroundPosition: '50% 0%',
-    width:'100%',
-    height: '100%',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat'
-  };
+  // const backgroundImage = {
+  //   backgroundImage: 'url(' + art + ')',
+  //   backgrounSize: 'cover',
+  //   overflow: 'hidden',
+  //   backgroundPosition: '50% 0%',
+  //   width:'100%',
+  //   height: '100%',
+  //   backgroundSize: 'contain',
+  //   backgroundRepeat: 'no-repeat'
+  // };
 
   const relieveHeadache = {
     backgroundColor: '#ecf0f1',
-  }
+  };
 
   return(
     <div style={relieveHeadache}>

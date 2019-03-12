@@ -13,12 +13,6 @@ function Footer(){
     width: '100%'
   };
 
-  const title = {
-    fontFamily: 'monospace, fantasy',
-    fontSize: '20px',
-    paddingBottom: '5px'
-  }
-
   return(
     <div style={footerInfo}>
       <hr/>

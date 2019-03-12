@@ -15,13 +15,13 @@ function Header(){
     fontFamily: 'monospace, fantasy',
     fontSize: '20px',
     paddingBottom: '5px'
-  }
+  };
 
   return(
     <div style={headerInfo}>
       <img src={key}/>
       <div style={title}>
-      <h1>E-S</h1>
+        <h1>E-S</h1>
       </div>
     </div>
   );

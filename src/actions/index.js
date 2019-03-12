@@ -3,11 +3,10 @@ import { firebaseConfig } from '../constants/firebaseConfig';
 
 firebase.initializeApp(firebaseConfig);
 
-const images = firebase.database().ref('images');
+const email = firebase.database().ref('email');
 
-export function addImage(_image) {
-  return () => images.push({
-    image: _image,
-    timeTaken: new Date().getTime()
+export function addEmail(_email) {
+  return () => email.push({
+    email: _email,
   });
 }

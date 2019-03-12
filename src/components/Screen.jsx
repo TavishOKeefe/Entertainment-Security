@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function Screen(props){
+function Screen(){
 
   const imageConstraints = {
     maxWidth: 200,
@@ -13,9 +12,5 @@ function Screen(props){
     </div>
   );
 }
-
-Screen.propTypes = {
-  pattern: PropTypes.number,
-};
 
 export default Screen;
