@@ -169,7 +169,7 @@ class Static extends React.Component {
     const showGrid = {
       display: 'grid',
       gridTemplateColumns: '250px 250px 250px 250px',
-      gridTemplateRows: '300px 300px 300px 300px',
+      gridTemplateRows: '300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px',
       gridAutoFlow: 'row',
       justifyContent: 'center',
       paddingTop: '25px'

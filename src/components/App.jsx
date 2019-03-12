@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
 import art from '../assets/images/Art-5.jpg';
+import Footer from './Footer';
 
 function App(){
 
@@ -28,6 +29,7 @@ function App(){
         <Route exact path='/' component={HomePage} />
         <Route exact path='/static' component={Static} />
       </Switch>
+      <Footer/>
     </div>
   );
 }

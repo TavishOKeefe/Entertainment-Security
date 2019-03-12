@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import key from '../assets/images/Key-2.png';
 
 function Header(){

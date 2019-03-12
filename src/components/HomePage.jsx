@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import key from '../assets/images/Key.png';
+import Header from './Header';
 
 function HomeScreen(){
 
@@ -17,8 +18,7 @@ function HomeScreen(){
 
   return(
     <div style={myStyledComponentStyles}>
-      <img src={key}/>
-      <h1>E-S</h1>
+    <Header/>
       <input
         className='Button'
         placeholder='Email...'
