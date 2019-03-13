@@ -12,7 +12,7 @@ If the user clicks on the wrong places, or if the user clicks on the right place
 
 ## Specifications
 
-![alt text](./src/assets/images/Tavish-Portfolio.png "Portfolio-Wireframe")
+![alt text](./src/assets/images/Entertainment-Security.png "Portfolio-Wireframe")
 
 
 ## _Setup/Installation Requirements_
