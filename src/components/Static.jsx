@@ -8,6 +8,7 @@ import marilyn from '../assets/images/marilyn.png';
 import Header from './Header';
 import FileSave from './FileSave';
 import { Link } from 'react-router-dom';
+import { addImage } from './../actions/index';
 
 class Static extends React.Component {
 
@@ -148,6 +149,7 @@ class Static extends React.Component {
     let newImageList = this.state.masterImageList.slice();
     const imageSrc = props.getScreenshot();
     newImageList.push(imageSrc);
+    addImage(imageSrc);
     this.setState({masterImageList: newImageList});
   }
 

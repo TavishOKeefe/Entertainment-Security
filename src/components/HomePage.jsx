@@ -31,7 +31,7 @@ function HomeScreen(){
       />
       <br/>
       <br/>
-      <Link to='/static'><button onClick={onHandleEmailUploadClick}>Next</button></Link>
+      <button onClick={onHandleEmailUploadClick}>Next</button>
     </div>
   );
 }
