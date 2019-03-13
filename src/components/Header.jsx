@@ -4,7 +4,6 @@ import key from '../assets/images/Key-2.png';
 function Header(){
 
   const headerInfo = {
-    fontFamily: 'sans-serif',
     paddingTop: '5px',
     justifyContent: 'center',
     textAlign: 'center',

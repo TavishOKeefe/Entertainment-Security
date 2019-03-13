@@ -179,11 +179,17 @@ class Static extends React.Component {
       backgroundRepeat: 'no-repeat'
     };
 
+    const centerElements = {
+      textAlign: 'center'
+    }
+
     if (this.state.imagesVisibleOnPage === true){
       return (
         <div>
           <Header/>
-          <h1>Images:</h1>
+          <div style={centerElements}>
+            <h1>Images:</h1>
+          </div>
           <div style={showGrid}>
             {this.state.masterImageList.map((image, i) =>
               <div key={i}>
@@ -201,7 +207,9 @@ class Static extends React.Component {
       return (
         <div>
           <Header/>
-          <h1>Set Your Button Clicks:</h1>
+          <div style={centerElements}>
+            <h1>Set Your Button Clicks:</h1>
+          </div>
           <div style={showGrid}>
             {this.state.masterButtonList.map((butt) =>
               <div key={butt.id}>

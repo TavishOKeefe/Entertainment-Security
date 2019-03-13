@@ -2,7 +2,7 @@ import React from 'react';
 import Static from './Static';
 import HomePage from './HomePage';
 import { Switch, Route } from 'react-router-dom';
-import art from '../assets/images/Art-14.jpg';
+import art from '../assets/images/Art-11.jpg';
 import Footer from './Footer';
 
 function App(){
