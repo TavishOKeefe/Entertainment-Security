@@ -13,7 +13,10 @@ function FileSave(){
     textAlign: 'center',
     fontFamily: 'monospace, fantasy',
     fontSize: '20px',
-    margin: '80px',
+    marginLeft: '200px',
+    marginRight: '200px',
+    marginTop: '100px',
+    marginBottom: '100px',
     borderRadius: '50px'
   };
 
@@ -23,7 +26,7 @@ function FileSave(){
 
   return(
     <div style={headerInfo}>
-      <FilePond style={display} allowMultiple={true} server='http://localhost:8080/#/showdocuments'/>
+      <FilePond style={display} allowMultiple={true}/>
     </div>
   );
 }
