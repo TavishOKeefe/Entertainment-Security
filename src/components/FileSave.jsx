@@ -23,7 +23,7 @@ function FileSave(){
 
   return(
     <div style={headerInfo}>
-      <FilePond style={display} allowMultiple={true}/>
+      <FilePond style={display} allowMultiple={true} server='http://localhost:8080/#/showdocuments'/>
     </div>
   );
 }
