@@ -187,8 +187,7 @@ class Static extends React.Component {
 
     const logOut = {
       textAlign: 'left',
-      marginLeft: '25px',
-      color: 'black'
+      marginLeft: '25px'
     };
 
     if (this.state.imagesVisibleOnPage === true){

@@ -19,7 +19,7 @@ function FileSave(){
 
   const display = {
     width: 'calc(50% - .5em)'
-  }
+  };
 
   return(
     <div style={headerInfo}>
