@@ -9,6 +9,7 @@ import Header from './Header';
 import FileSave from './FileSave';
 import { Link } from 'react-router-dom';
 import { addImage } from './../actions/index';
+import { addPattern } from './../actions/index';
 
 class Static extends React.Component {
 
@@ -139,6 +140,7 @@ class Static extends React.Component {
       }
       if (array[0].numberOfClicks === 3){
         this.setState({formVisibleOnPage: true});
+        addPattern(array);
       }
     });
     this.setState({masterButtonList: newMasterButtonList});

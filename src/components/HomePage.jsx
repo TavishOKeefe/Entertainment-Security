@@ -30,8 +30,8 @@ function HomeScreen(){
       />
       <br/>
       <br/>
-      <button onClick={onHandleEmailUploadClick}>Next</button>
-      <Link to='/static'><button>New User</button></Link>
+      <button>Next</button>
+      <Link to='/static' onClick={onHandleEmailUploadClick}><button>New User</button></Link>
     </div>
   );
 }
