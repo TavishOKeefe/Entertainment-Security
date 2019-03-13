@@ -20,6 +20,9 @@ If the user clicks on the wrong places, or if the user clicks on the right place
 * _Clone repository to your desktop_
 * _Open in Atom, or text and source code editor of your choosing._
 * _Run npm install from CLI._
+* _Create a Firebase database._
+* _Create a firebaseConfig.js file in Constants folder._
+* _Copy API key and information from Firebase and place in firebaseConfig.js file._
 * _Run npm run start from CLI._
 
 ## Known Bugs
@@ -37,6 +40,7 @@ _Tavish OKeefe: okeefe.tavish@gmail.com_
 * _Javascript_
 * _HTML_
 * _eslint_
+* _Firebase_
 
 ### License
 

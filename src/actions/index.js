@@ -20,7 +20,6 @@ export function addImage(_images) {
 }
 
 export function addPattern(_patternCode) {
-  console.log(_patternCode);
   patternCode.push({
     patternCode: _patternCode,
   });
