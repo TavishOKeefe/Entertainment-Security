@@ -7,7 +7,6 @@ import art from '../assets/images/Art-14.jpg';
 function HomeScreen(){
 
   var myStyledComponentStyles = {
-    backgroundImage: 'url(' + art + ')',
     fontFamily: 'sans-serif',
     paddingTop: '50px',
     textAlign: 'center',
@@ -32,6 +31,7 @@ function HomeScreen(){
       <br/>
       <br/>
       <button onClick={onHandleEmailUploadClick}>Next</button>
+      <Link to='/static'><button>New User</button></Link>
     </div>
   );
 }
