@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import { Switch, Route } from 'react-router-dom';
 import art from '../assets/images/Art-11.jpg';
 import Footer from './Footer';
+import ShowDocuments from './ShowDocuments';
 
 function App(){
 
@@ -16,15 +17,12 @@ function App(){
     height: '100%'
   };
 
-  const relieveHeadache = {
-    backgroundColor: '#ecf0f1',
-  };
-
   return(
     <div style={backgroundImage}>
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/static' component={Static} />
+        <Route exact path='/showdocuments' component={ShowDocuments} />
       </Switch>
       <Footer/>
     </div>

@@ -6,6 +6,8 @@ import Webcam from 'react-webcam';
 import ShowImage from './ShowImage';
 import marilyn from '../assets/images/marilyn.png';
 import Header from './Header';
+import FileSave from './FileSave';
+import { Link } from 'react-router-dom';
 
 class Static extends React.Component {
 
@@ -181,13 +183,24 @@ class Static extends React.Component {
 
     const centerElements = {
       textAlign: 'center'
-    }
+    };
+
+    const logOut = {
+      textAlign: 'left',
+      marginLeft: '25px',
+      color: 'black'
+    };
 
     if (this.state.imagesVisibleOnPage === true){
       return (
         <div>
           <Header/>
+          <div style={logOut}>
+            <Link to='/'><h3>-Log Out-</h3></Link>
+          </div>
           <div style={centerElements}>
+            <h1>Files:</h1>
+            <FileSave/>
             <h1>Images:</h1>
           </div>
           <div style={showGrid}>

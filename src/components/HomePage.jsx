@@ -1,11 +1,13 @@
 import React from 'react';
 import Header from './Header';
 import { addEmail } from './../actions/index';
+import { Link } from 'react-router-dom';
+import art from '../assets/images/Art-14.jpg';
 
 function HomeScreen(){
 
   var myStyledComponentStyles = {
-    backgroundColor: '#ecf0f1',
+    backgroundImage: 'url(' + art + ')',
     fontFamily: 'sans-serif',
     paddingTop: '50px',
     textAlign: 'center',
@@ -29,7 +31,7 @@ function HomeScreen(){
       />
       <br/>
       <br/>
-      <button onClick={onHandleEmailUploadClick}>Next</button>
+      <Link to='/static'><button onClick={onHandleEmailUploadClick}>Next</button></Link>
     </div>
   );
 }

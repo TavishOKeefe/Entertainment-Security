@@ -3,6 +3,7 @@ import React from 'react';
 function Footer(){
 
   const footerInfo = {
+    fontSize: '10px',
     backgroundColor: '#ecf0f1',
     fontFamily: 'sans-serif',
     paddingTop: '5px',
