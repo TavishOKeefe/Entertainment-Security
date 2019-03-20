@@ -6,7 +6,6 @@ function Footer(){
     fontSize: '10px',
     backgroundColor: '#ecf0f1',
     fontFamily: 'sans-serif',
-    paddingTop: '5px',
     justifyContent: 'center',
     textAlign: 'center',
     left: 0,

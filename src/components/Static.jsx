@@ -222,6 +222,11 @@ class Static extends React.Component {
     } else if (this.state.formVisibleOnPage === false){
       return (
         <div>
+        <style jsx>{`
+          .red-text:hover {
+            background-color: #ffcece;
+          }
+        `}</style>
           <Header/>
           <div style={centerElements}>
             <h1>Set Your Button Clicks:</h1>
@@ -234,7 +239,7 @@ class Static extends React.Component {
                   pattern={butt.pattern}
                   key={butt.id}
                 />
-                <img src={marilyn} onClick={() => this.onHandleFormClick(butt.id)}/>
+                <img className="red-text" src={marilyn} onClick={() => this.onHandleFormClick(butt.id)}/>
                 <hr/>
               </div>
             )}

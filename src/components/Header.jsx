@@ -11,7 +11,8 @@ function Header(){
     fontSize: '20px',
     paddingBottom: '5px',
     color: '#82d7ff',
-    textShadow: '3px 2px black'
+    textShadow: '3px 2px black',
+    opacity: '.9'
   };
 
   return(
