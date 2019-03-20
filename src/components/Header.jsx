@@ -10,7 +10,8 @@ function Header(){
     fontFamily: 'monospace, fantasy',
     fontSize: '20px',
     paddingBottom: '5px',
-    color: 'red'
+    color: '#82d7ff',
+    textShadow: '3px 2px black'
   };
 
   return(

@@ -20,7 +20,7 @@ function Footer(){
       <p>Copyright: Tavish McKenzie OKeefe</p>
       <p>For information, lost identification credentials, or access to security images, please contact ESInformation@gmail.com</p>
       <p>Entertainment Security</p>
-      <p>1944 Johnson Street, Portland, OR</p>
+      <p>Portland, OR</p>
       <hr/>
     </div>
   );

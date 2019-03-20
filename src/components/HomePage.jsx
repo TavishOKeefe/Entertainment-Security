@@ -14,6 +14,14 @@ function HomeScreen(){
     paddingBottom: '200px'
   };
 
+  var buttonStyles = {
+    padding: '5px'
+  }
+
+  var searchBarStyle = {
+    padding: '5px'
+  }
+
   let _email = null;
 
   function onHandleEmailUploadClick(){
@@ -24,14 +32,15 @@ function HomeScreen(){
     <div style={myStyledComponentStyles}>
       <Header/>
       <input
+        style={searchBarStyle}
         className='Button'
         placeholder='Email...'
         ref={(input) => {_email = input;}}
       />
       <br/>
       <br/>
-      <Link to='/static'><button>Next</button></Link>
-      <Link to='/static' onClick={onHandleEmailUploadClick}><button>New User</button></Link>
+      <Link to='/static'><button style={buttonStyles}>Next</button></Link>
+      <Link to='/static' onClick={onHandleEmailUploadClick}><button style={buttonStyles}>New User</button></Link>
     </div>
   );
 }
