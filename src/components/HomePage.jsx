@@ -25,6 +25,11 @@ function HomeScreen(){
 
   var searchBarStyle = {
     padding: '5px',
+    backgroundColor: '#f2dede',
+    borderStyle: 'solid',
+    borderColor: 'black',
+    borderWidth: '.5px',
+    marginTop: '40px'
   }
 
   let _email = null;

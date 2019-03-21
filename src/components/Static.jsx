@@ -140,7 +140,7 @@ class Static extends React.Component {
       }
       if (array[0].numberOfClicks === 3){
         this.setState({formVisibleOnPage: true});
-        addPattern(array);
+        addPattern(newMasterButtonList);
       }
     });
     this.setState({masterButtonList: newMasterButtonList});
@@ -223,8 +223,9 @@ class Static extends React.Component {
       return (
         <div>
         <style jsx>{`
-          .red-text:hover {
+          .background:hover {
             background-color: #ffcece;
+            border-radius: 15px;
           }
         `}</style>
           <Header/>
@@ -239,7 +240,7 @@ class Static extends React.Component {
                   pattern={butt.pattern}
                   key={butt.id}
                 />
-                <img className="red-text" src={marilyn} onClick={() => this.onHandleFormClick(butt.id)}/>
+                <img className="background" src={marilyn} onClick={() => this.onHandleFormClick(butt.id)}/>
                 <hr/>
               </div>
             )}
@@ -249,11 +250,6 @@ class Static extends React.Component {
     } else {
       return(
         <div>
-        <style jsx>{`
-          .blue-text:hover {
-            background-color: #ffcece;
-          }
-        `}</style>
           <Header/>
           <div style={showGrid}>
             {this.state.masterButtonList.map((butt) =>
@@ -263,7 +259,7 @@ class Static extends React.Component {
                   pattern={butt.pattern}
                   key={butt.id}
                 />
-                <div className="blue-text" style={showMarilyn} onClick={() => this.onHandleClick(butt.id, _image)}>
+                <div style={showMarilyn} onClick={() => this.onHandleClick(butt.id, _image)}>
                   <div style={hideVideo}>
                     <Webcam
                       height={200}
