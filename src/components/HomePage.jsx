@@ -14,15 +14,17 @@ function HomeScreen(){
     paddingBottom: '200px'
   };
 
-  var buttonStyles:hover = {
-    padding: '4px'
+  var buttonStyles = {
+    padding: '4px',
+    backgroundColor: '#c2cbef',
+    borderStyle: 'solid',
+    borderColor: 'black',
+    borderWidth: '1px',
+    margin: '2px'
   }
 
   var searchBarStyle = {
-    backgroundColor: '#3a3b3d',
-    opacity: '.8',
     padding: '5px',
-    color: '#c1cacc',
   }
 
   let _email = null;

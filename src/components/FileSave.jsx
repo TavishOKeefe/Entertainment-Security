@@ -13,8 +13,8 @@ function FileSave(){
     textAlign: 'center',
     fontFamily: 'monospace, fantasy',
     fontSize: '20px',
-    marginLeft: '200px',
-    marginRight: '200px',
+    marginLeft: '400px',
+    marginRight: '400px',
     marginTop: '100px',
     marginBottom: '100px',
     borderRadius: '50px'

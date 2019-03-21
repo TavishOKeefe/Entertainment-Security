@@ -249,6 +249,11 @@ class Static extends React.Component {
     } else {
       return(
         <div>
+        <style jsx>{`
+          .blue-text:hover {
+            background-color: #ffcece;
+          }
+        `}</style>
           <Header/>
           <div style={showGrid}>
             {this.state.masterButtonList.map((butt) =>
@@ -258,7 +263,7 @@ class Static extends React.Component {
                   pattern={butt.pattern}
                   key={butt.id}
                 />
-                <div style={showMarilyn} onClick={() => this.onHandleClick(butt.id, _image)}>
+                <div className="blue-text" style={showMarilyn} onClick={() => this.onHandleClick(butt.id, _image)}>
                   <div style={hideVideo}>
                     <Webcam
                       height={200}
