@@ -138,11 +138,11 @@ class Static extends React.Component {
         array[0].numberOfClicks += 1;
         button.pattern += array[0].numberOfClicks;
       }
-      if (array[0].numberOfClicks === 3){
-        this.setState({formVisibleOnPage: true});
-        addPattern(newMasterButtonList);
-      }
     });
+    if (array[0].numberOfClicks === 3){
+      this.setState({formVisibleOnPage: true});
+      addPattern(newMasterButtonList);
+    }
     this.setState({masterButtonList: newMasterButtonList});
     this.setState({formArray: array});
   }
@@ -222,12 +222,12 @@ class Static extends React.Component {
     } else if (this.state.formVisibleOnPage === false){
       return (
         <div>
-        <style jsx>{`
-          .background:hover {
-            background-color: #ffcece;
-            border-radius: 15px;
-          }
-        `}</style>
+          <style jsx>{`
+            .background:hover {
+              background-color: #ffcece;
+              border-radius: 15px;
+            }
+          `}</style>
           <Header/>
           <div style={centerElements}>
             <h1>Set Your Button Clicks:</h1>
